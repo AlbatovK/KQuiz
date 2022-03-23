@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/EnterFragment">
+
+    <fragment
+        android:id="@+id/QuizListFragment"
+        android:name="com.albatros.kquiz.ui.fragments.list.QuizListFragment"
+        android:label="Выбор варианта"
+        tools:layout="@layout/quiz_list_fragment">
+
+        <action
+            android:id="@+id/action_QuizListFragment_to_EnterFragment"
+            app:destination="@id/EnterFragment" />
+
+        <action
+            android:id="@+id/action_QuizListFragment_to_HostFragment"
+            app:destination="@+id/HostFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/HostFragment"
+        android:name="com.albatros.kquiz.ui.fragments.host.HostFragment"
+        android:label="Организация"
+        tools:layout="@layout/host_fragment" >
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/EnterFragment"
+        android:name="com.albatros.kquiz.ui.fragments.enter.EnterFragment"
+        android:label=""
+        tools:layout="@layout/enter_fragment">
+
+        <action
+            android:id="@+id/action_EnterFragment_to_QuizListFragment"
+            app:destination="@id/QuizListFragment" />
+
+        <action
+            android:id="@+id/action_EnterFragment_to_ClientFragment"
+            app:destination="@+id/ClientFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/ClientFragment"
+        android:name="com.albatros.kquiz.ui.fragments.client.ClientFragment"
+        tools:layout="@layout/client_fragment"
+        android:label="Организация" />
+
+
+</navigation>
