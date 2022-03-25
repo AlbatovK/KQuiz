@@ -6,23 +6,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.albatros.kquiz.R
+import com.albatros.kquiz.databinding.ClientInputDialogBinding
 import com.albatros.kquiz.databinding.EnterFragmentBinding
+import com.albatros.kquiz.databinding.NameDialogBinding
+import com.albatros.kquiz.ui.activity.MainActivity
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class EnterFragment : Fragment() {
+class EnterFragment : Fragment(), MainActivity.IOnBackPressed {
 
     private val viewModel: EnterViewModel by viewModel()
     private lateinit var binding: EnterFragmentBinding
 
     private val onUserIdChangedObserver = Observer<Long?> {
         if (it == null) {
-            Toast.makeText(context, "Some mistake", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Unable to find session with this id. Try again.", Toast.LENGTH_SHORT).show()
             return@Observer
         }
-        Toast.makeText(context, it.toString(), Toast.LENGTH_SHORT).show()
         val direction = EnterFragmentDirections.actionEnterFragmentToClientFragment()
         findNavController().navigate(direction)
     }
@@ -37,7 +42,7 @@ class EnterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setHasOptionsMenu(true)
+        setHasOptionsMenu(false)
 
         postponeEnterTransition()
         sharedElementEnterTransition = TransitionInflater.from(context)
@@ -46,14 +51,49 @@ class EnterFragment : Fragment() {
 
         viewModel.userId.observe(viewLifecycleOwner, onUserIdChangedObserver)
 
-        binding.createBtn.setOnClickListener {
-            val direction = EnterFragmentDirections.actionEnterFragmentToQuizListFragment()
-            findNavController().navigate(direction)
-        }
+        with(binding) {
 
-        binding.enterBtn.setOnClickListener {
-            val id = binding.edit.text.toString()
-            viewModel.enterSession(id, "another")
+            cardCreate.setOnClickListener {
+                val direction = EnterFragmentDirections.actionEnterFragmentToQuizListFragment()
+                findNavController().navigate(direction)
+            }
+
+            cardExit.setOnClickListener {
+                activity?.let {
+                    it.finish()
+                    it.finishAffinity()
+                }
+            }
+
+            cardEnter.setOnClickListener {
+                showClientInputDialog()
+            }
         }
+    }
+
+    private fun showClientInputDialog() {
+        val dialogBinding = ClientInputDialogBinding.inflate(layoutInflater)
+        val dialog = MaterialAlertDialogBuilder(binding.root.context).apply {
+            setView(dialogBinding.root)
+            setPositiveButton("Готово") { it, _ ->
+                val name = dialogBinding.nameEdit.text.toString().ifBlank { "NoName" }
+                val id = dialogBinding.idEdit.text.toString()
+                viewModel.enterSession(id, name)
+                it.cancel()
+            }
+        }.create()
+        dialog.window?.let {
+            it.setBackgroundDrawable(ResourcesCompat.getDrawable(resources, R.drawable.dialog_shape, activity?.theme))
+            it.attributes.verticalMargin = -0.1F
+        }
+        dialog.show()
+    }
+
+    override fun onBackPressed(): Boolean {
+        activity?.let {
+            it.finish()
+            it.finishAffinity()
+        }
+        return true
     }
 }

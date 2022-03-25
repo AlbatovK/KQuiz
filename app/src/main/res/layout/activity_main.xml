@@ -4,31 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_gray"
+    android:fitsSystemWindows="true"
     tools:context=".ui.activity.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/Theme.KQuiz.AppBarOverlay">
+        android:layout_marginTop="26dp"
+        android:elevation="0dp"
+        android:fitsSystemWindows="true"
+        android:layoutAnimation="@null"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:theme="@style/Theme.KQuiz.AppBarOverlay"
+        app:elevation="0dp"
+        app:statusBarScrim="@android:color/transparent">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.KQuiz.PopupOverlay" />
+            android:background="@android:color/transparent"
+            android:elevation="0dp"
+            android:fitsSystemWindows="true"
+            android:layoutAnimation="@null"
+            app:elevation="0dp"
+            app:popupTheme="@style/Theme.KQuiz.PopupOverlay"
+            app:statusBarScrim="@android:color/transparent"
+            app:titleTextAppearance="@style/AppBarTextAppearance" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_main" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

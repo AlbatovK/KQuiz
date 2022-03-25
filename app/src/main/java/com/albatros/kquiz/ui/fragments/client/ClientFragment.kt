@@ -6,26 +6,31 @@ import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.albatros.kquiz.R
 import com.albatros.kquiz.databinding.ClientFragmentBinding
 import com.albatros.kquiz.model.data.ClientInfo
+import com.albatros.kquiz.ui.activity.MainActivity
 import com.albatros.kquiz.ui.adapter.client.ClientAdapter
+import com.albatros.kquiz.ui.fragments.host.HostFragmentDirections
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class ClientFragment : Fragment() {
+class ClientFragment : Fragment(), MainActivity.IOnBackPressed {
 
     private lateinit var binding: ClientFragmentBinding
     private val viewModel: ClientViewModel by viewModel()
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.host_menu, menu)
+        inflater.inflate(R.menu.custom_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean = when(item.itemId) {
-        R.id.action_refresh -> {
-            viewModel.updateUserInfo()
+        android.R.id.home -> {
+            val direction = ClientFragmentDirections.actionClientFragmentToEnterFragment()
+            findNavController().navigate(direction)
             true
         } else -> false
     }
@@ -40,19 +45,28 @@ class ClientFragment : Fragment() {
     }
 
     private val onStartedStateChanged = Observer<Boolean> {
-        /* Todo got to game */
-        Toast.makeText(context, it.toString(), Toast.LENGTH_SHORT).show()
+        if (it) {
+            val question = viewModel.getFirstQuestion()
+            val direction = ClientFragmentDirections.actionClientFragmentToGameFragment(question)
+            findNavController().navigate(direction)
+        }
+    }
+
+    override fun onBackPressed(): Boolean {
+        val direction = ClientFragmentDirections.actionClientFragmentToEnterFragment()
+        findNavController().navigate(direction)
+        return true
     }
 
     private val onUsersInfoChangedObserver = Observer<List<ClientInfo>> {
-        binding.list.adapter = ClientAdapter(it as MutableList<ClientInfo>)
-        binding.list.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        Toast.makeText(context, "$it", Toast.LENGTH_SHORT).show()
+        binding.list.adapter = ClientAdapter(it.toMutableList())
+        binding.list.layoutManager = GridLayoutManager(context, 2, LinearLayoutManager.VERTICAL, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setHasOptionsMenu(true)
+
         postponeEnterTransition()
         sharedElementEnterTransition = TransitionInflater.from(context)
             .inflateTransition(android.R.transition.move)

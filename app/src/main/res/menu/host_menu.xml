@@ -2,8 +2,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_refresh"
+        android:id="@+id/action_info"
         android:orderInCategory="0"
-        android:title="@string/action_settings"
+        android:title=""
+        android:icon="@drawable/ic_info"
         app:showAsAction="always" />
+
 </menu>

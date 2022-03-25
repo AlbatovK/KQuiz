@@ -3,7 +3,9 @@ package com.albatros.kquiz.ui.adapter.quiz
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.albatros.kquiz.R
 import com.albatros.kquiz.databinding.QuizLayoutBinding
+import com.albatros.kquiz.domain.playFadeInAnimation
 import com.albatros.kquiz.model.data.Quiz
 
 class QuizAdapter(
@@ -31,10 +33,16 @@ class QuizAdapter(
 
         private fun bind(quiz: Quiz?) {
             quiz?.let {
-                binding.data.text = it.name
-                binding.root.setOnClickListener { view ->
-                    /* Safe navigation check */
-                    try { listener.onQuizSelected(it, view) } catch (e: Exception) {}
+                with(binding) {
+                    title.text = it.name
+                    val qString = root.context.resources.getQuantityString(R.plurals.question_plurals, it.questions.size)
+                    count.text = root.context.getString(R.string.question_size, it.questions.size, qString)
+                    topics.text = it.topics.joinToString(", ")
+
+                    root.playFadeInAnimation(R.anim.fade_in_animation)
+                    root.setOnClickListener { view ->
+                        try { listener.onQuizSelected(it, view) } catch (e: Exception) {}
+                    }
                 }
             }
         }

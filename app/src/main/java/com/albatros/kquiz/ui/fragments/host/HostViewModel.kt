@@ -8,13 +8,30 @@ import com.albatros.kquiz.model.api.ApiService
 import com.albatros.kquiz.model.data.ClientInfo
 import com.albatros.kquiz.model.repo.ClientRepo
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class HostViewModel(private val api: ApiService, private val repo: ClientRepo) : ViewModel() {
 
+    private var active = true
+
+    override fun onCleared() {
+        active = false
+        super.onCleared()
+    }
+
     private val _usersInfo = MutableLiveData<List<ClientInfo>>().apply {
         viewModelScope.launch(Dispatchers.Main) {
-            value = api.getClientsInfo(repo.sessionId)
+            while (active) {
+                try { value = api.getClientsInfo(repo.sessionId) } catch (e: Exception) { }
+                delay(10_000)
+            }
+        }
+    }
+
+    fun stopSession() {
+        viewModelScope.launch(Dispatchers.Main) {
+            try { api.deleteSessionIfExists(repo.sessionId) } catch (e: Exception) { }
         }
     }
 
@@ -24,20 +41,17 @@ class HostViewModel(private val api: ApiService, private val repo: ClientRepo) :
 
     val started = _started
 
+    fun getSessionId() = repo.sessionId
+
+    fun getFirstQuestion() = repo.quiz.questions[0]
+
     fun startSession() {
         viewModelScope.launch(Dispatchers.Main) {
             _started.value = try {
                 api.startSession(repo.sessionId)
+                delay(500)
                 true
-            } catch (e: Exception) {
-                false
-            }
-        }
-    }
-
-    fun updateUserInfo() {
-        viewModelScope.launch(Dispatchers.Main) {
-            _usersInfo.value = api.getClientsInfo(repo.sessionId)
+            } catch (e: Exception) { false }
         }
     }
 }

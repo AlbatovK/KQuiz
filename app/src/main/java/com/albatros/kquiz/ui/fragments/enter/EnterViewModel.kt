@@ -17,14 +17,18 @@ class EnterViewModel(private val api: ApiService, private val repo: ClientRepo) 
 
     fun enterSession(id: String, name: String) {
         viewModelScope.launch(Dispatchers.Main) {
-            try {
-                repo.clientInfo.id = api.enterSession(id.toLong(), name).code
-                repo.clientInfo.name = name
-                _userId.value = repo.clientInfo.id
-                repo.sessionId = id.toLong()
-                repo.quiz = api.getCurrentQuiz(repo.sessionId)
+            _userId.value = try {
+                with (repo) {
+                    clientInfo.id = api.enterSession(id.toLong(), name).code
+                    clientInfo.name = name
+
+                    sessionId = id.toLong()
+                    quiz = api.getCurrentQuiz(repo.sessionId)
+
+                    clientInfo.id
+                }
             } catch (e: Exception) {
-                _userId.value = null
+               null
             }
         }
     }

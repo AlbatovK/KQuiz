@@ -15,9 +15,15 @@ class ClientViewModel(private val api: ApiService, private val repo: ClientRepo)
 
     private val _usersInfo = MutableLiveData<List<ClientInfo>>().apply {
         viewModelScope.launch(Dispatchers.Main) {
-            value = api.getClientsInfo(repo.sessionId)
+            while (active) {
+                try { value = api.getClientsInfo(repo.sessionId) } catch (e: Exception) { }
+                delay(10_000)
+            }
         }
     }
+
+
+    fun getFirstQuestion() = repo.quiz.questions[0]
 
     private var active = true
 
@@ -27,7 +33,7 @@ class ClientViewModel(private val api: ApiService, private val repo: ClientRepo)
                 try {
                     value = api.hasStarted(repo.sessionId)
                 } catch (e: Exception) {}
-                delay(2_000)
+                delay(1_000)
             }
         }
     }

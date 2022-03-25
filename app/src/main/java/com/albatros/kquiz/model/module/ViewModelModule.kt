@@ -2,6 +2,8 @@ package com.albatros.kquiz.model.module
 
 import com.albatros.kquiz.ui.fragments.client.ClientViewModel
 import com.albatros.kquiz.ui.fragments.enter.EnterViewModel
+import com.albatros.kquiz.ui.fragments.game.GameViewModel
+import com.albatros.kquiz.ui.fragments.result.ResultViewModel
 import com.albatros.kquiz.ui.fragments.host.HostViewModel
 import com.albatros.kquiz.ui.fragments.list.ListViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -12,4 +14,6 @@ val viewModelModule = module {
     viewModel { ListViewModel(get(), get()) }
     viewModel { HostViewModel(get(), get()) }
     viewModel { ClientViewModel(get(), get()) }
+    viewModel { parameters -> GameViewModel(parameters.get(), get(), get()) }
+    viewModel { parameters -> ResultViewModel(parameters.get(), get(), get()) }
 }

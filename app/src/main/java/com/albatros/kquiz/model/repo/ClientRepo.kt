@@ -7,4 +7,5 @@ class ClientRepo {
     var quiz: Quiz = Quiz()
     var sessionId: Long = 0
     var clientInfo = ClientInfo()
+    var currentPos = 0
 }

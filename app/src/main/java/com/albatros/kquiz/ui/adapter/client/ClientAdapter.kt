@@ -12,13 +12,17 @@ class ClientAdapter(private val clients: MutableList<ClientInfo>) :
     override fun getItemCount(): Int = clients.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClientViewHolder {
-        val binding = ClientLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ClientLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ClientViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ClientViewHolder, position: Int) { holder.client = clients[position] }
+    override fun onBindViewHolder(holder: ClientViewHolder, position: Int) {
+        holder.client = clients[position]
+    }
 
-    inner class ClientViewHolder(private val binding: ClientLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ClientViewHolder(private val binding: ClientLayoutBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         var client: ClientInfo? = null
             get() = field!!
@@ -29,7 +33,9 @@ class ClientAdapter(private val clients: MutableList<ClientInfo>) :
 
         private fun bind(info: ClientInfo?) {
             info?.let {
-                binding.data.text = it.name
+                with(binding) {
+                    name.text = it.name
+                }
             }
         }
     }

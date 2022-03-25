@@ -25,7 +25,15 @@
         android:id="@+id/HostFragment"
         android:name="com.albatros.kquiz.ui.fragments.host.HostFragment"
         android:label="Организация"
-        tools:layout="@layout/host_fragment" >
+        tools:layout="@layout/host_fragment">
+
+        <action
+            android:id="@+id/action_HostFragment_to_EnterFragment"
+            app:destination="@+id/EnterFragment" />
+
+        <action
+            android:id="@+id/action_HostFragment_to_GameFragment"
+            app:destination="@id/GameFragment" />
 
     </fragment>
 
@@ -46,10 +54,63 @@
     </fragment>
 
     <fragment
+        android:id="@+id/GameFragment"
+        android:name="com.albatros.kquiz.ui.fragments.game.GameFragment"
+        android:label=""
+        tools:layout="@layout/game_fragment">
+
+        <action
+            android:id="@+id/action_GameFragment_to_GameFragment"
+            app:destination="@id/GameFragment" />
+
+        <action
+            android:id="@+id/action_GameFragment_to_EnterFragment"
+            app:destination="@id/EnterFragment" />
+
+        <action
+            android:id="@+id/action_GameFragment_to_ResultFragment"
+            app:destination="@+id/ResultFragment" />
+
+        <argument
+            android:name="question"
+            app:argType="com.albatros.kquiz.model.data.Question" />
+
+    </fragment>
+
+    <fragment
         android:id="@+id/ClientFragment"
         android:name="com.albatros.kquiz.ui.fragments.client.ClientFragment"
-        tools:layout="@layout/client_fragment"
-        android:label="Организация" />
+        android:label="Организация"
+        tools:layout="@layout/client_fragment">
 
+        <action
+            android:id="@+id/action_ClientFragment_to_GameFragment"
+            app:destination="@id/GameFragment" />
+
+        <action
+            android:id="@+id/action_ClientFragment_to_EnterFragment"
+            app:destination="@id/EnterFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/ResultFragment"
+        android:name="com.albatros.kquiz.ui.fragments.result.ResultFragment"
+        android:label=""
+        tools:layout="@layout/result_fragment">
+
+        <action
+            android:id="@+id/action_ResultFragment_to_GameFragment"
+            app:destination="@id/GameFragment" />
+
+        <action
+            android:id="@+id/action_ResultFragment_to_EnterFragment"
+            app:destination="@id/EnterFragment" />
+
+        <argument
+            android:name="question"
+            app:argType="com.albatros.kquiz.model.data.Question" />
+
+    </fragment>
 
 </navigation>
