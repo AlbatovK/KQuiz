@@ -20,12 +20,13 @@ class ResultViewModel(
 
     private val _onPassiveStateEnded = MutableLiveData<Boolean>().apply {
         viewModelScope.launch(Dispatchers.Main) {
-            delay(15_000)
+            delay(5_000)
             value = true
         }
     }
 
     fun stopSession() {
+        repo.currentPos = 0
         viewModelScope.launch(Dispatchers.Main) {
             try { api.deleteSessionIfExists(repo.sessionId) } catch (e: Exception) { }
         }

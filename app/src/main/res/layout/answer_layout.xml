@@ -30,10 +30,10 @@
                 style="@style/CardTextStyleTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ellipsize="end"
+                android:maxHeight="150dp"
                 android:autoSizeMinTextSize="16sp"
                 android:gravity="center"
-                android:maxLines="1"
+                android:autoSizeTextType="uniform"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
 

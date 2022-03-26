@@ -20,7 +20,7 @@ class GameViewModel(
 
     private val _onActionEnd = MutableLiveData<Boolean>().apply {
         viewModelScope.launch(Dispatchers.Main) {
-            delay(30_000)
+            delay(20_000)
             value = false
         }
     }
@@ -29,7 +29,7 @@ class GameViewModel(
         value = 200
         viewModelScope.launch(Dispatchers.Main) {
             while (value!! > 0) {
-                delay(150)
+                delay(100)
                 value = value!! - 1
             }
         }

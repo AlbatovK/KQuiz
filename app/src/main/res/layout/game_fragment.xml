@@ -29,13 +29,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:autoSizeTextType="uniform"
             android:layout_marginBottom="16dp"
-            android:autoSizeMaxTextSize="48sp"
-            android:autoSizeMinTextSize="40sp"
+            android:autoSizeMinTextSize="20sp"
             android:gravity="center"
-            android:maxLines="4"
+            android:maxHeight="220dp"
             android:textColor="@color/black"
-            android:textSize="48sp" />
+            android:textSize="32sp" />
 
     </androidx.cardview.widget.CardView>
 

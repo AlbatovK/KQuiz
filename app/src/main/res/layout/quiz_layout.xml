@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/count"
@@ -44,7 +44,7 @@
                 android:alpha="0.7"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/topics"
@@ -54,7 +54,7 @@
                 android:alpha="0.7"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
         </LinearLayout>
 
