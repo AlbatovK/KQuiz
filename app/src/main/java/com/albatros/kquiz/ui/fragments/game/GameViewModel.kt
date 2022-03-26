@@ -5,8 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.albatros.kquiz.model.api.ApiService
-import com.albatros.kquiz.model.data.AnswerSubmit
-import com.albatros.kquiz.model.data.Question
+import com.albatros.kquiz.model.data.response.AnswerSubmit
+import com.albatros.kquiz.model.data.pojo.Question
 import com.albatros.kquiz.model.repo.ClientRepo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -20,7 +20,10 @@ class GameViewModel(
 
     private val _onActionEnd = MutableLiveData<Boolean>().apply {
         viewModelScope.launch(Dispatchers.Main) {
-            delay(20_000)
+            repeat(20) {
+                delay(1000)
+                times++
+            }
             value = false
         }
     }
@@ -40,12 +43,12 @@ class GameViewModel(
 
     val onActionEnd: LiveData<Boolean> = _onActionEnd
 
+    var times = 0
+
     private val _onSuccessSubmit = MutableLiveData<Boolean>()
 
-    val onSuccessSubmit: LiveData<Boolean> = _onSuccessSubmit
-
     fun submitData(answer: String) {
-        val data = AnswerSubmit(repo.clientInfo.id, repo.currentPos, answer == question.answer, 0)
+        val data = AnswerSubmit(repo.clientInfo.id, repo.currentPos, answer == question.answer, times)
         repo.currentPos++
         viewModelScope.launch(Dispatchers.Main) {
             try {

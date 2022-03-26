@@ -1,7 +1,7 @@
 package com.albatros.kquiz.model.repo
 
-import com.albatros.kquiz.model.data.ClientInfo
-import com.albatros.kquiz.model.data.Quiz
+import com.albatros.kquiz.model.data.info.ClientInfo
+import com.albatros.kquiz.model.data.pojo.Quiz
 
 class ClientRepo {
     var quiz: Quiz = Quiz()

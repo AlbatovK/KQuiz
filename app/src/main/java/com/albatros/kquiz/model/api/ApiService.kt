@@ -1,9 +1,9 @@
 package com.albatros.kquiz.model.api
 
-import com.albatros.kquiz.model.data.AnswerSubmit
-import com.albatros.kquiz.model.data.ClientInfo
-import com.albatros.kquiz.model.data.Quiz
-import com.albatros.kquiz.model.data.ResponseData
+import com.albatros.kquiz.model.data.response.AnswerSubmit
+import com.albatros.kquiz.model.data.info.ClientInfo
+import com.albatros.kquiz.model.data.pojo.Quiz
+import com.albatros.kquiz.model.data.response.ResponseData
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST

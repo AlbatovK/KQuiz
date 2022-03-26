@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.albatros.kquiz.databinding.ClientLayoutBinding
-import com.albatros.kquiz.model.data.ClientInfo
+import com.albatros.kquiz.model.data.info.ClientInfo
 
 class ClientAdapter(private val clients: MutableList<ClientInfo>) :
     RecyclerView.Adapter<ClientAdapter.ClientViewHolder>() {

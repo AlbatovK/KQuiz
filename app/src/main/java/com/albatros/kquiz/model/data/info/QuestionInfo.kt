@@ -1,4 +1,4 @@
-package com.albatros.kquiz.model.data
+package com.albatros.kquiz.model.data.info
 
 import android.os.Parcelable
 import com.google.gson.annotations.Expose
@@ -6,15 +6,7 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class AnswerSubmit(
-
-    @SerializedName("id")
-    @Expose
-    var id: Long = 0,
-
-    @SerializedName("position")
-    @Expose
-    var position: Int = 0,
+data class QuestionInfo(
 
     @SerializedName("right")
     @Expose

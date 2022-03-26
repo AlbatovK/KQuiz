@@ -1,4 +1,4 @@
-package com.albatros.kquiz.model.data
+package com.albatros.kquiz.model.data.pojo
 
 import android.os.Parcelable
 import com.google.gson.annotations.Expose

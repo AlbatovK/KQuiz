@@ -1,6 +1,5 @@
 package com.albatros.kquiz.ui.fragments.list
 
-import android.content.Intent
 import android.os.Bundle
 import android.transition.TransitionInflater
 import android.view.LayoutInflater
@@ -15,10 +14,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.albatros.kquiz.R
-import com.albatros.kquiz.databinding.InfoDialogBinding
 import com.albatros.kquiz.databinding.NameDialogBinding
 import com.albatros.kquiz.databinding.QuizListFragmentBinding
-import com.albatros.kquiz.model.data.Quiz
+import com.albatros.kquiz.model.data.pojo.Quiz
 import com.albatros.kquiz.ui.adapter.quiz.QuizAdapter
 import com.albatros.kquiz.ui.adapter.quiz.QuizAdapterListener
 import com.google.android.material.dialog.MaterialAlertDialogBuilder

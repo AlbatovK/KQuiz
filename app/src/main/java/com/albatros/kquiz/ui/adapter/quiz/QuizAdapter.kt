@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.albatros.kquiz.R
 import com.albatros.kquiz.databinding.QuizLayoutBinding
 import com.albatros.kquiz.domain.playFadeInAnimation
-import com.albatros.kquiz.model.data.Quiz
+import com.albatros.kquiz.model.data.pojo.Quiz
 
 class QuizAdapter(
     private val quizzes: MutableList<Quiz>,

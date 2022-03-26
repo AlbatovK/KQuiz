@@ -1,4 +1,4 @@
-package com.albatros.kquiz.model.data
+package com.albatros.kquiz.model.data.info
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -19,6 +19,6 @@ data class ClientInfo(
 
     @SerializedName("questionMap")
     @Expose
-    var questionMap: HashMap<Int, Boolean> = HashMap()
+    var questionMap: HashMap<Int, QuestionInfo> = HashMap()
 
 )

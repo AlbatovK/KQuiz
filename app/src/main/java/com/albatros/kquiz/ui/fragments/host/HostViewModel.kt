@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.albatros.kquiz.model.api.ApiService
-import com.albatros.kquiz.model.data.ClientInfo
+import com.albatros.kquiz.model.data.info.ClientInfo
 import com.albatros.kquiz.model.repo.ClientRepo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay

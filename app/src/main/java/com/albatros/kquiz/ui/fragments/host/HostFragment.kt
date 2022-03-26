@@ -14,10 +14,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.albatros.kquiz.R
 import com.albatros.kquiz.databinding.HostFragmentBinding
 import com.albatros.kquiz.databinding.InfoDialogBinding
-import com.albatros.kquiz.model.data.ClientInfo
+import com.albatros.kquiz.model.data.info.ClientInfo
 import com.albatros.kquiz.ui.activity.MainActivity
 import com.albatros.kquiz.ui.adapter.client.ClientAdapter
-import com.albatros.kquiz.ui.fragments.enter.EnterFragmentDirections
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

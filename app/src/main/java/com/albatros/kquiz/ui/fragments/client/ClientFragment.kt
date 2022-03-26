@@ -3,7 +3,6 @@ package com.albatros.kquiz.ui.fragments.client
 import android.os.Bundle
 import android.transition.TransitionInflater
 import android.view.*
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -11,10 +10,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.albatros.kquiz.R
 import com.albatros.kquiz.databinding.ClientFragmentBinding
-import com.albatros.kquiz.model.data.ClientInfo
+import com.albatros.kquiz.model.data.info.ClientInfo
 import com.albatros.kquiz.ui.activity.MainActivity
 import com.albatros.kquiz.ui.adapter.client.ClientAdapter
-import com.albatros.kquiz.ui.fragments.host.HostFragmentDirections
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ClientFragment : Fragment(), MainActivity.IOnBackPressed {

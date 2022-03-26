@@ -5,8 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.albatros.kquiz.model.api.ApiService
-import com.albatros.kquiz.model.data.ClientInfo
-import com.albatros.kquiz.model.data.Question
+import com.albatros.kquiz.model.data.info.ClientInfo
+import com.albatros.kquiz.model.data.pojo.Question
 import com.albatros.kquiz.model.repo.ClientRepo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -35,7 +35,7 @@ class ResultViewModel(
     private val _usersInfo = MutableLiveData<List<ClientInfo>>().apply {
         viewModelScope.launch(Dispatchers.Main) {
             value = api.getClientsInfo(repo.sessionId).sortedByDescending {
-                it.questionMap.count { item -> item.value }
+                it.questionMap.count { item -> item.value.right }
             }
         }
     }
