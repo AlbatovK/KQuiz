@@ -17,6 +17,9 @@ import com.albatros.kquiz.databinding.InfoDialogBinding
 import com.albatros.kquiz.model.data.info.ClientInfo
 import com.albatros.kquiz.ui.activity.MainActivity
 import com.albatros.kquiz.ui.adapter.client.ClientAdapter
+import com.google.android.flexbox.FlexDirection
+import com.google.android.flexbox.FlexboxLayoutManager
+import com.google.android.flexbox.JustifyContent
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -35,7 +38,10 @@ class HostFragment : Fragment(), MainActivity.IOnBackPressed {
 
     private val onUsersInfoChangedObserver = Observer<List<ClientInfo>> {
         binding.list.adapter = ClientAdapter(it.toMutableList())
-        binding.list.layoutManager = GridLayoutManager(context, 2, LinearLayoutManager.VERTICAL, false)
+        binding.list.layoutManager = FlexboxLayoutManager(context).apply {
+            flexDirection = FlexDirection.ROW
+            justifyContent = JustifyContent.CENTER
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

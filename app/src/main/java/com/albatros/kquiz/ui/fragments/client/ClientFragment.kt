@@ -13,6 +13,9 @@ import com.albatros.kquiz.databinding.ClientFragmentBinding
 import com.albatros.kquiz.model.data.info.ClientInfo
 import com.albatros.kquiz.ui.activity.MainActivity
 import com.albatros.kquiz.ui.adapter.client.ClientAdapter
+import com.google.android.flexbox.FlexDirection
+import com.google.android.flexbox.FlexboxLayoutManager
+import com.google.android.flexbox.JustifyContent
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ClientFragment : Fragment(), MainActivity.IOnBackPressed {
@@ -58,7 +61,10 @@ class ClientFragment : Fragment(), MainActivity.IOnBackPressed {
 
     private val onUsersInfoChangedObserver = Observer<List<ClientInfo>> {
         binding.list.adapter = ClientAdapter(it.toMutableList())
-        binding.list.layoutManager = GridLayoutManager(context, 2, LinearLayoutManager.VERTICAL, false)
+        binding.list.layoutManager =  FlexboxLayoutManager(context).apply {
+            flexDirection = FlexDirection.ROW
+            justifyContent = JustifyContent.FLEX_START
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

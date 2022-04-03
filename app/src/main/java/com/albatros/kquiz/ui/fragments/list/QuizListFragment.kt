@@ -19,6 +19,9 @@ import com.albatros.kquiz.databinding.QuizListFragmentBinding
 import com.albatros.kquiz.model.data.pojo.Quiz
 import com.albatros.kquiz.ui.adapter.quiz.QuizAdapter
 import com.albatros.kquiz.ui.adapter.quiz.QuizAdapterListener
+import com.google.android.flexbox.FlexDirection
+import com.google.android.flexbox.FlexboxLayoutManager
+import com.google.android.flexbox.JustifyContent
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -47,7 +50,7 @@ class QuizListFragment : Fragment() {
     private val onQuizzesLoadedObserver = Observer<List<Quiz>?> {
         if (it == null) {
             lifecycleScope.launch(Dispatchers.Main) {
-                delay(2_000)
+                delay(1_000)
                 Toast.makeText(context, "Could not load quiz list. Try again.", Toast.LENGTH_SHORT).show()
                 val direction = QuizListFragmentDirections.actionQuizListFragmentToEnterFragment()
                 findNavController().navigate(direction)
@@ -55,7 +58,10 @@ class QuizListFragment : Fragment() {
             return@Observer
         }
         binding.list.adapter = QuizAdapter(it.toMutableList(), listener)
-        binding.list.layoutManager = GridLayoutManager(context, 2, LinearLayoutManager.VERTICAL, false)
+        binding.list.layoutManager = FlexboxLayoutManager(context).apply {
+            flexDirection = FlexDirection.ROW
+            justifyContent = JustifyContent.CENTER
+        }
     }
 
     private val onRegisterResult = Observer<Long?> {
