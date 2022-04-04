@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.albatros.kquiz.R
 import com.albatros.kquiz.databinding.GameFragmentBinding
+import com.albatros.kquiz.ui.activity.MainActivity
 import com.albatros.kquiz.ui.adapter.answer.AnswerAdapter
 import com.albatros.kquiz.ui.adapter.answer.AnswerAdapterListener
 import kotlinx.coroutines.Dispatchers
@@ -25,13 +26,15 @@ import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
-class GameFragment : Fragment() {
+class GameFragment : Fragment(), MainActivity.IOnBackPressed {
 
     private lateinit var binding: GameFragmentBinding
     private val args by navArgs<GameFragmentArgs>()
     private val viewModel: GameViewModel by viewModel { parametersOf(args.question) }
     private var answered = false
     private var currentAnswer = ""
+
+    override fun onBackPressed(): Boolean = true
 
     override fun onCreateView(
         inflater: LayoutInflater,

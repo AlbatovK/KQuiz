@@ -89,11 +89,10 @@ class EnterFragment : Fragment(), MainActivity.IOnBackPressed {
         dialog.show()
     }
 
-    override fun onBackPressed(): Boolean {
+    override fun onBackPressed(): Boolean =
         activity?.let {
             it.finish()
             it.finishAffinity()
-        }
-        return true
-    }
+            true
+        } ?: false
 }

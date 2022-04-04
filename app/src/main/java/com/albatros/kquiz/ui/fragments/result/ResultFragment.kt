@@ -11,15 +11,18 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.albatros.kquiz.R
 import com.albatros.kquiz.databinding.ResultFragmentBinding
 import com.albatros.kquiz.model.data.info.ClientInfo
+import com.albatros.kquiz.ui.activity.MainActivity
 import com.albatros.kquiz.ui.adapter.client.ResultAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
-class ResultFragment : Fragment() {
+class ResultFragment : Fragment(), MainActivity.IOnBackPressed {
 
     private lateinit var binding: ResultFragmentBinding
     private val args by navArgs<ResultFragmentArgs>()
     private val viewModel: ResultViewModel by viewModel { parametersOf(args.question) }
+
+    override fun onBackPressed(): Boolean = true
 
     private val onPassiveStateEndedObserver = Observer<Boolean> { value ->
         if (value) {
