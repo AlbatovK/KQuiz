@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">KQuiz</string>
     <string name="question_size">%d %s</string>
+    <string name="place">%d место</string>
 </resources>

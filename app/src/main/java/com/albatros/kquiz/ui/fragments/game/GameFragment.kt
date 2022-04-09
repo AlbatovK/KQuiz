@@ -8,6 +8,8 @@ import android.os.Bundle
 import android.transition.TransitionInflater
 import android.view.*
 import androidx.cardview.widget.CardView
+import androidx.core.content.res.ResourcesCompat
+import androidx.core.graphics.drawable.DrawableCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
@@ -97,6 +99,18 @@ class GameFragment : Fragment(), MainActivity.IOnBackPressed {
         postponeEnterTransition()
         sharedElementEnterTransition = TransitionInflater.from(context)
             .inflateTransition(android.R.transition.move)
+
+        val gradIds = listOf(
+            R.drawable.grad_1,
+            R.drawable.grad_2,
+            R.drawable.grad_3,
+            R.drawable.grad_4
+        )
+
+        val gradient = gradIds.random()
+
+        (activity as MainActivity).setBackground(gradient)
+
         startPostponedEnterTransition()
 
         with(binding) {

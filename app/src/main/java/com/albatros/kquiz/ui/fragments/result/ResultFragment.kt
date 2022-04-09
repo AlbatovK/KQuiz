@@ -68,6 +68,9 @@ class ResultFragment : Fragment(), MainActivity.IOnBackPressed {
         postponeEnterTransition()
         sharedElementEnterTransition = TransitionInflater.from(context)
             .inflateTransition(android.R.transition.move)
+
+        (activity as MainActivity).setDefaultColor()
+
         startPostponedEnterTransition()
 
         viewModel.onPassiveStateEnded.observe(viewLifecycleOwner, onPassiveStateEndedObserver)

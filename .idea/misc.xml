@@ -4,6 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/drawable-v24/dialog_shape.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/drawable-v24/grad_1.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/drawable-v24/grad_2.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/drawable-v24/grad_3.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/drawable-v24/grad_4.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/drawable/main_grad.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/drawable/progress.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/layout/activity_main.xml" value="0.15" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/layout/answer_layout.xml" value="0.15537059056678557" />
@@ -18,7 +23,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/layout/name_dialog.xml" value="0.15" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/layout/quiz_layout.xml" value="0.22" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/layout/quiz_list_fragment.xml" value="0.33" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/layout/result_client_layout.xml" value="0.33" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/layout/result_client_layout.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/layout/result_fragment.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/menu/host_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/menu/menu_main.xml" value="0.20416666666666666" />

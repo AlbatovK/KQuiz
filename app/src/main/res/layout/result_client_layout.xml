@@ -7,7 +7,7 @@
     android:layout_margin="12dp">
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/place"
         style="@style/CardTextStyleTitle"
         android:textSize="16sp"
         android:alpha="0.7"
@@ -17,12 +17,23 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/score"
+        android:id="@+id/name"
         android:textSize="22sp"
         style="@style/CardTextStyleTitle"
         android:layout_width="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_marginStart="10dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/place" />
+
+    <TextView
+        android:id="@+id/score"
+        android:textSize="22sp"
+        style="@style/CardTextStyleTitle"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="20dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name" />

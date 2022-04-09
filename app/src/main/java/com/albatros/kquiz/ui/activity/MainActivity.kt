@@ -6,6 +6,7 @@ import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.res.ResourcesCompat
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -22,6 +23,14 @@ class MainActivity : AppCompatActivity() {
     override fun onUserInteraction() {
         super.onUserInteraction()
         setWindowState()
+    }
+
+    fun setBackground(id: Int) {
+        binding.root.background = ResourcesCompat.getDrawable(resources, id, theme)
+    }
+
+    fun setDefaultColor() {
+        binding.root.background = ResourcesCompat.getDrawable(resources, R.drawable.main_grad, theme)
     }
 
     @Suppress("deprecation")

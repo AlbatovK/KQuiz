@@ -33,7 +33,7 @@ class ClientViewModel(private val api: ApiService, private val repo: ClientRepo)
                 try {
                     value = api.hasStarted(repo.sessionId)
                 } catch (e: Exception) {}
-                delay(1_000)
+                delay(500)
             }
         }
     }
