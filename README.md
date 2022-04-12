@@ -35,11 +35,11 @@
     * Material design
     * FlexBox
 
-### Базовая структура
+# Базовая структура
 ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/circles.drawio.svg?raw=true)
 
-### Слои приложения
+# Слои приложения
 ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/layers.drawio.svg?raw=true)
 
-### Структура интерфейса
+# Структура интерфейса
 ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/app_structure.drawio.svg?raw=true)
