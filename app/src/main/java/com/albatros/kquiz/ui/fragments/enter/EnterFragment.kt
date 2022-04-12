@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import android.widget.Toast.LENGTH_SHORT
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -16,6 +17,8 @@ import com.albatros.kquiz.databinding.EnterFragmentBinding
 import com.albatros.kquiz.databinding.NameDialogBinding
 import com.albatros.kquiz.ui.activity.MainActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class EnterFragment : Fragment(), MainActivity.IOnBackPressed {
@@ -25,7 +28,7 @@ class EnterFragment : Fragment(), MainActivity.IOnBackPressed {
 
     private val onUserIdChangedObserver = Observer<Long?> {
         if (it == null) {
-            Toast.makeText(context, "Unable to find session with this id. Try again.", Toast.LENGTH_SHORT).show()
+            Snackbar.make(binding.root, "Unable to find session with this id. Try again.", BaseTransientBottomBar.LENGTH_SHORT).show()
             return@Observer
         }
         val direction = EnterFragmentDirections.actionEnterFragmentToClientFragment()

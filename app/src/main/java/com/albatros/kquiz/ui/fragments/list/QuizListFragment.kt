@@ -23,6 +23,8 @@ import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexboxLayoutManager
 import com.google.android.flexbox.JustifyContent
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -51,7 +53,7 @@ class QuizListFragment : Fragment() {
         if (it == null) {
             lifecycleScope.launch(Dispatchers.Main) {
                 delay(1_000)
-                Toast.makeText(context, "Could not load quiz list. Try again.", Toast.LENGTH_SHORT).show()
+                Snackbar.make(binding.list, "Could not load quiz list. Try again.", BaseTransientBottomBar.LENGTH_SHORT).show()
                 val direction = QuizListFragmentDirections.actionQuizListFragmentToEnterFragment()
                 findNavController().navigate(direction)
             }
