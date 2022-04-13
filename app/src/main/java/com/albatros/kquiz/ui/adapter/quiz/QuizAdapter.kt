@@ -36,7 +36,6 @@ class QuizAdapter(
             quiz?.let {
                 with(binding) {
 
-                    card.setCardBackgroundColor(getRandomColor())
                     title.text = it.name
                     val qString = root.context.resources.getQuantityString(R.plurals.question_plurals, it.questions.size)
                     count.text = root.context.getString(R.string.question_size, it.questions.size, qString)

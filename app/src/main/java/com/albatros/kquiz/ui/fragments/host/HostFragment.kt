@@ -54,7 +54,9 @@ class HostFragment : Fragment(), MainActivity.IOnBackPressed {
         dialogBinding.sessionIdTxt.text = viewModel.getSessionId().toString()
         val dialog = MaterialAlertDialogBuilder(binding.root.context).apply {
             setView(dialogBinding.root)
-            setNegativeButton("Закрыть") { it, _ -> it.cancel() }
+            setNegativeButton("Закрыть") { it, _ -> it.cancel()
+                (activity as? MainActivity)?.onUserInteraction()
+            }
             setPositiveButton("Поделиться") { it, _ ->
                 val intent = Intent(Intent.ACTION_SEND)
                 val shareBody = dialogBinding.sessionIdTxt.text.toString()
@@ -62,6 +64,7 @@ class HostFragment : Fragment(), MainActivity.IOnBackPressed {
                 intent.putExtra(Intent.EXTRA_TEXT, shareBody)
                 startActivity(Intent.createChooser(intent, "Invitation to the game"))
                 it.cancel()
+                (activity as? MainActivity)?.onUserInteraction()
             }
         }.create()
         dialog.window?.let {

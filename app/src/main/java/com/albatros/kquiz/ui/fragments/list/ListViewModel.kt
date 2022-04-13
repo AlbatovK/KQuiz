@@ -22,6 +22,28 @@ class ListViewModel(private val api: ApiService, private val repo: ClientRepo) :
         }
     }
 
+    fun loadQuizList() {
+        viewModelScope.launch {
+            _quizzes.value = try {
+                api.getQuizzes()
+            } catch (e: Exception) {
+                null
+            }
+        }
+    }
+
+    fun fetchByTopics(query: String) {
+        viewModelScope.launch {
+            _quizzes.value = try {
+                api.getQuizzes().filter {
+                    it.name.lowercase().contains(query, ignoreCase = true) || query.lowercase() in it.topics.map(String::lowercase)
+                }
+            } catch (e: Exception) {
+                null
+            }
+        }
+    }
+
     val quizzes: LiveData<List<Quiz>?> = _quizzes
 
     private val _sessionId: MutableLiveData<Long?> = MutableLiveData()

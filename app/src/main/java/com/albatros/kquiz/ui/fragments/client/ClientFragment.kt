@@ -6,8 +6,6 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.albatros.kquiz.R
 import com.albatros.kquiz.databinding.ClientFragmentBinding
 import com.albatros.kquiz.model.data.info.ClientInfo
@@ -24,7 +22,7 @@ class ClientFragment : Fragment(), MainActivity.IOnBackPressed {
     private val viewModel: ClientViewModel by viewModel()
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.custom_menu, menu)
+        inflater.inflate(R.menu.empty_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 

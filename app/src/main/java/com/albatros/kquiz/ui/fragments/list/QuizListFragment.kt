@@ -1,11 +1,12 @@
 package com.albatros.kquiz.ui.fragments.list
 
+import android.app.SearchManager
+import android.content.Context
 import android.os.Bundle
 import android.transition.TransitionInflater
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -17,6 +18,7 @@ import com.albatros.kquiz.R
 import com.albatros.kquiz.databinding.NameDialogBinding
 import com.albatros.kquiz.databinding.QuizListFragmentBinding
 import com.albatros.kquiz.model.data.pojo.Quiz
+import com.albatros.kquiz.ui.activity.MainActivity
 import com.albatros.kquiz.ui.adapter.quiz.QuizAdapter
 import com.albatros.kquiz.ui.adapter.quiz.QuizAdapterListener
 import com.google.android.flexbox.FlexDirection
@@ -74,6 +76,44 @@ class QuizListFragment : Fragment() {
         showNameInputDialog(it)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.quiz_list_menu, menu)
+
+        val searchView = menu.findItem(R.id.action_search).actionView as SearchView
+
+        val listener = object : MenuItem.OnActionExpandListener {
+            override fun onMenuItemActionCollapse(item: MenuItem?): Boolean {
+                viewModel.loadQuizList()
+                return true
+            }
+            override fun onMenuItemActionExpand(item: MenuItem?): Boolean = true
+        }
+
+        menu.findItem(R.id.action_search).setOnActionExpandListener(listener)
+
+        searchView.setOnCloseListener {
+            viewModel.loadQuizList()
+            true
+        }
+
+        val queryListener = object: SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                query?.trim()?.lowercase()?.let { viewModel.fetchByTopics(query) }
+                return true
+            }
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return false
+            }
+        }
+
+        searchView.setOnQueryTextListener(queryListener)
+        val manager = context?.getSystemService(Context.SEARCH_SERVICE) as SearchManager
+        val info = manager.getSearchableInfo(activity?.componentName)
+        searchView.setSearchableInfo(info)
+
+        return super.onCreateOptionsMenu(menu, inflater)
+    }
+
     private fun showNameInputDialog(id: Long) {
         val dialogBinding = NameDialogBinding.inflate(layoutInflater)
         val dialog = MaterialAlertDialogBuilder(binding.root.context).apply {
@@ -82,6 +122,7 @@ class QuizListFragment : Fragment() {
                 val name = dialogBinding.nameEdit.text.toString().ifBlank { "NoName" }
                 viewModel.enterSession(id, name)
                 it.cancel()
+                (activity as? MainActivity)?.onUserInteraction()
             }
         }.create()
         dialog.window?.let {
@@ -102,6 +143,8 @@ class QuizListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setHasOptionsMenu(true)
+
         postponeEnterTransition()
         sharedElementEnterTransition = TransitionInflater.from(context)
             .inflateTransition(android.R.transition.move)

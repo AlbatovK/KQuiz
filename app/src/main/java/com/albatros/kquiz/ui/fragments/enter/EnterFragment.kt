@@ -83,6 +83,7 @@ class EnterFragment : Fragment(), MainActivity.IOnBackPressed {
                 val id = dialogBinding.idEdit.text.toString()
                 viewModel.enterSession(id, name)
                 it.cancel()
+                (activity as? MainActivity)?.onUserInteraction()
             }
         }.create()
         dialog.window?.let {

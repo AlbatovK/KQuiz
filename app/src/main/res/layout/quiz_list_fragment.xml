@@ -6,6 +6,7 @@
     tools:context=".ui.fragments.list.QuizListFragment">
 
     <androidx.core.widget.NestedScrollView
+        android:paddingTop="30dp"
         android:id="@+id/scroll_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

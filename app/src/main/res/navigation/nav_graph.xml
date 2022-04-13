@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/QuizListFragment"
         android:name="com.albatros.kquiz.ui.fragments.list.QuizListFragment"
-        android:label="Выбор варианта"
+        android:label=""
         tools:layout="@layout/quiz_list_fragment">
 
         <action

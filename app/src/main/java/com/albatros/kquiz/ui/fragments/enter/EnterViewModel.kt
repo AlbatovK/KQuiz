@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 
 class EnterViewModel(private val api: ApiService, private val repo: ClientRepo) : ViewModel() {
 
-    private val _userId: MutableLiveData<Long?> = MutableLiveData()
+    private val _userId: MutableLiveData<Long?> = MutableLiveData<Long?>()
 
     val userId: LiveData<Long?> = _userId
 

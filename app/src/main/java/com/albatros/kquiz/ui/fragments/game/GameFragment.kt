@@ -48,7 +48,7 @@ class GameFragment : Fragment(), MainActivity.IOnBackPressed {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.custom_menu, menu)
+        inflater.inflate(R.menu.empty_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 
