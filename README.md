@@ -43,3 +43,14 @@
 
 # Структура интерфейса
 ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/app_structure.drawio.svg?raw=true)
+
+# Скриншоты работы приложения
+ ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/enter.jpeg?raw=true)       | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/list.jpeg?raw=true)       |
+| -------------- | -------------- |
+| ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/search_1.jpeg?raw=true)   | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/search_2.jpeg?raw=true)    |
+| ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/name_host.jpeg?raw=true) | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/host.jpeg?raw=true) |
+![](https://github.com/AlbatovK/KQuiz/blob/master/assets/host_info.jpeg?raw=true) | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/name_client.jpeg?raw=true)
+![](https://github.com/AlbatovK/KQuiz/blob/master/assets/client_ex.jpeg?raw=true) | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/client.jpeg?raw=true)
+![](https://github.com/AlbatovK/KQuiz/blob/master/assets/ex_1.jpeg?raw=true) | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/ex_2.jpeg?raw=true)
+![](https://github.com/AlbatovK/KQuiz/blob/master/assets/ex_3.jpeg?raw=true) | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/res_1.jpeg?raw=true)
+![](https://github.com/AlbatovK/KQuiz/blob/master/assets/res_2.jpeg?raw=true) | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/res_3.jpeg?raw=true)
