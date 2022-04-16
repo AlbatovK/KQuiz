@@ -17,6 +17,10 @@ data class ClientInfo(
     @Expose
     var started: Boolean = false,
 
+    @SerializedName("score")
+    @Expose
+    var score: Int = 0,
+
     @SerializedName("questionMap")
     @Expose
     var questionMap: HashMap<Int, QuestionInfo> = HashMap()

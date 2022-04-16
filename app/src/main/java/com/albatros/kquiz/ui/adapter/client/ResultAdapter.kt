@@ -38,17 +38,11 @@ class ResultAdapter(private val clients: MutableList<ClientInfo>) :
                 with(binding) {
 
                     binding.root.playFadeInAnimation(R.anim.fade_in_animation)
+
                     name.text = it.name
+                    score.text = it.score.toString()
 
-                    val scr = it.questionMap.values.filter { item -> item.right }.sumOf {
-                        1200 - it.time * 10
-                    }
-
-                    score.text = scr.toString()
-
-                    place.text = root.context.getString(R.string.place, clients.map {
-                            item -> item.questionMap.values.sumOf { q -> if (q.right) 1200 - q.time * 10 else 0 }
-                    }.indexOf(scr) + 1)
+                    place.text = root.context.getString(R.string.place, clients.map(ClientInfo::score).indexOf(it.score) + 1)
 
                     val from = if (it.questionMap.size == 0) 0 else it.questionMap.size - 1
                     val to = if (it.questionMap.size > 2) it.questionMap.size - 3 else 0

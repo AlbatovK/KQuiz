@@ -34,9 +34,7 @@ class ResultViewModel(
 
     private val _usersInfo = MutableLiveData<List<ClientInfo>>().apply {
         viewModelScope.launch(Dispatchers.Main) {
-            value = api.getClientsInfo(repo.sessionId).sortedByDescending {
-                it.questionMap.count { item -> item.value.right }
-            }
+            value = api.getClientsInfo(repo.sessionId).sortedByDescending(ClientInfo::score)
         }
     }
 
