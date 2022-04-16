@@ -44,6 +44,9 @@
 # Структура интерфейса
 ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/app_structure.drawio.svg?raw=true)
 
+# Структура базы данных
+![](https://github.com/AlbatovK/KQuiz/blob/master/assets/db_export.png?raw=true)
+
 # Скриншоты работы приложения
  ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/enter.jpeg?raw=true)       | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/list.jpeg?raw=true)       |
 | -------------- | -------------- |
@@ -54,3 +57,4 @@
 ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/ex_1.jpeg?raw=true) | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/ex_2.jpeg?raw=true)
 ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/ex_3.jpeg?raw=true) | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/res_1.jpeg?raw=true)
 ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/res_2.jpeg?raw=true) | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/res_3.jpeg?raw=true)
+### Inspired by Kolodin Dmitriy
