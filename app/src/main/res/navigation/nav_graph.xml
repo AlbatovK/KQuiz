@@ -38,6 +38,18 @@
     </fragment>
 
     <fragment
+        android:id="@+id/PedestalFragment"
+        android:name="com.albatros.kquiz.ui.fragments.pedestal.PedestalFragment"
+        android:label=""
+        tools:layout="@layout/pedestal_fragment">
+
+        <action
+            android:id="@+id/action_PedestalFragment_to_EnterFragment"
+            app:destination="@id/EnterFragment" />
+
+    </fragment>
+
+    <fragment
         android:id="@+id/EnterFragment"
         android:name="com.albatros.kquiz.ui.fragments.enter.EnterFragment"
         android:label=""
@@ -104,8 +116,8 @@
             app:destination="@id/GameFragment" />
 
         <action
-            android:id="@+id/action_ResultFragment_to_EnterFragment"
-            app:destination="@id/EnterFragment" />
+            android:id="@+id/action_ResultFragment_to_PedestalFragment"
+            app:destination="@id/PedestalFragment" />
 
         <argument
             android:name="question"

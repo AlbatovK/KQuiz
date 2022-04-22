@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/second"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="80dp"
+        android:background="@color/dimgrey"
+        android:maxWidth="80dp"
+        android:minWidth="70dp"
+        app:cardBackgroundColor="@color/dimgrey"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/first" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/first"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="80dp"
+        android:background="@color/dimgrey"
+        android:maxWidth="80dp"
+        android:minWidth="70dp"
+        app:cardBackgroundColor="@color/dimgrey"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/third"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="80dp"
+        android:background="@color/dimgrey"
+        android:maxWidth="80dp"
+        android:minWidth="70dp"
+        app:cardBackgroundColor="@color/dimgrey"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/first" />
+
+    <TextView
+        android:id="@+id/third_txt"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        style="@style/CardTextStyleTitle"
+        app:layout_constraintBottom_toTopOf="@+id/third"
+        app:layout_constraintEnd_toEndOf="@+id/third"
+        app:layout_constraintStart_toStartOf="@+id/third" />
+
+    <TextView
+        android:id="@+id/second_txt"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        style="@style/CardTextStyleTitle"
+        app:layout_constraintBottom_toTopOf="@+id/second"
+        app:layout_constraintEnd_toEndOf="@+id/second"
+        app:layout_constraintStart_toStartOf="@+id/second" />
+
+    <TextView
+        android:id="@+id/first_txt"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        style="@style/CardTextStyleTitle"
+        app:layout_constraintBottom_toTopOf="@+id/first"
+        app:layout_constraintEnd_toEndOf="@+id/first"
+        app:layout_constraintStart_toStartOf="@+id/first" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "426842074858",
+    "project_id": "kquiz-d931d",
+    "storage_bucket": "kquiz-d931d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:426842074858:android:1c4590057b8aa180a1f193",
+        "android_client_info": {
+          "package_name": "com.albatros.kquiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "426842074858-bltgoiv05t38p2l1qerhjqm3cu1g0g7i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDy4wFdeWnRFDydDSLlTfsLr5MGZoSudXE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "426842074858-bltgoiv05t38p2l1qerhjqm3cu1g0g7i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

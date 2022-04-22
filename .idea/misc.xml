@@ -11,6 +11,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/drawable-v24/ic_search.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/drawable/main_grad.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/drawable/progress.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/drawable/star.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/layout/activity_main.xml" value="0.15" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/layout/answer_layout.xml" value="0.15537059056678557" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/layout/client_input_dialog.xml" value="0.12" />
@@ -22,6 +23,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/layout/host_fragment.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/layout/info_dialog.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/layout/name_dialog.xml" value="0.15" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/layout/pedestal_fragment.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/layout/quiz_layout.xml" value="0.22" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/layout/quiz_list_fragment.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KQuiz/app/src/main/res/layout/result_client_layout.xml" value="0.2" />

@@ -5,6 +5,7 @@ import android.transition.TransitionInflater
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -29,10 +30,11 @@ class ResultFragment : Fragment(), MainActivity.IOnBackPressed {
             viewModel.getNextQuestion()?.let {
                 val direction = ResultFragmentDirections.actionResultFragmentToGameFragment(it)
                 findNavController().navigate(direction)
+                binding.list.adapter = null
                 return@Observer
             }
-            viewModel.stopSession()
-            val direction = ResultFragmentDirections.actionResultFragmentToEnterFragment()
+            ResultAdapter.clearLast()
+            val direction = ResultFragmentDirections.actionResultFragmentToPedestalFragment()
             findNavController().navigate(direction)
         }
     }
@@ -48,7 +50,7 @@ class ResultFragment : Fragment(), MainActivity.IOnBackPressed {
     }
 
     private val onInfoLoaded = Observer<List<ClientInfo>> {
-        binding.list.adapter = ResultAdapter(it.toMutableList())
+        binding.list.adapter = ResultAdapter(it.toMutableList(), lifecycleScope)
         binding.list.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
     }
 
