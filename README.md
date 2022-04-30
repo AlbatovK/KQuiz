@@ -45,7 +45,7 @@
 ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/app_structure.drawio.svg?raw=true)
 
 # Структура базы данных
-![](https://github.com/AlbatovK/KQuiz/blob/master/assets/db_export.png?raw=true)
+![](https://github.com/AlbatovK/KQuiz/blob/master/assets/db_export.drawio.svg?raw=true)
 
 # Скриншоты работы приложения
  ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/enter.jpeg?raw=true)       | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/list.jpeg?raw=true)       |
