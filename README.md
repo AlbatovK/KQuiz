@@ -13,7 +13,7 @@
     * Kotlin + Coroutines - выполнение асинхронных операций в отдельных потоках
     * Retrofit - быстрый и удобный доступ к API со стороны клиента
     * Spring Boot Framework - web-приложение развёрнутое на Heroku
-    * Google Firebase Filestore - серверная NoSql база данных
+    * Google Firebase Filestore - серверная документо-ориентированная NoSql база данных
     * Android Jetpack
         * Fragment - использование нескольких экранов в рамках одной активности
         * Navigation - навигация между фрагментами в рамках одной активности
@@ -57,4 +57,3 @@
 ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/ex_1.jpeg?raw=true) | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/ex_2.jpeg?raw=true)
 ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/ex_3.jpeg?raw=true) | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/res_1.jpeg?raw=true)
 ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/res_2.jpeg?raw=true) | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/res_3.jpeg?raw=true)
-### Inspired by Kolodin Dmitriy
