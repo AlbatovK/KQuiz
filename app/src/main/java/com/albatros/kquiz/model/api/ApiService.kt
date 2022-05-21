@@ -11,6 +11,12 @@ import retrofit2.http.Query
 
 interface ApiService {
 
+    @GET(value = "/session/enable")
+    suspend fun enableService()
+
+    @POST(value = "/quiz/create")
+    suspend fun createQuiz(@Body quiz: Quiz)
+
     @GET(value = "/quiz/get/all")
     suspend fun getQuizzes(): List<Quiz>
 

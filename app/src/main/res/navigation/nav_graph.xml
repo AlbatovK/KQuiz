@@ -22,6 +22,18 @@
     </fragment>
 
     <fragment
+        android:id="@+id/CreatorFragment"
+        android:name="com.albatros.kquiz.ui.fragments.creator.CreatorFragment"
+        android:label=""
+        tools:layout="@layout/creator_fragment">
+
+        <action
+            android:id="@+id/action_CreatorFragment_to_EnterFragment"
+            app:destination="@+id/EnterFragment" />
+
+    </fragment>
+
+    <fragment
         android:id="@+id/HostFragment"
         android:name="com.albatros.kquiz.ui.fragments.host.HostFragment"
         android:label="Организация"
@@ -62,6 +74,10 @@
         <action
             android:id="@+id/action_EnterFragment_to_ClientFragment"
             app:destination="@+id/ClientFragment" />
+
+        <action
+            android:id="@+id/action_EnterFragment_to_CreatorFragment"
+            app:destination="@id/CreatorFragment" />
 
     </fragment>
 

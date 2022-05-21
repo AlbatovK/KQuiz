@@ -20,9 +20,14 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
+    companion object {
+        var set_state = true
+    }
+
     override fun onUserInteraction() {
         super.onUserInteraction()
-        setWindowState()
+        if (set_state)
+            setWindowState()
     }
 
     fun setBackground(id: Int) {
@@ -35,6 +40,7 @@ class MainActivity : AppCompatActivity() {
 
     @Suppress("deprecation")
     private fun setWindowState() {
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         window.setFlags(
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS

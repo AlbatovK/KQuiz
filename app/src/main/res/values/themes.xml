@@ -19,6 +19,17 @@
         <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
+    <style name="LightInputStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/white</item>
+    </style>
+
+    <style name="ErrorTextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@android:color/holo_red_dark</item>
+        <item name="android:alpha">0.8</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
     <style name="Theme.KQuiz.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.KQuiz.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

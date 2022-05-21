@@ -3,4 +3,7 @@
     <string name="question_size">%d %s</string>
     <string name="place">%d место</string>
     <string name="search_hint">Поиск</string>
+    <string name="q_count">Question %d</string>
+    <string name="right_answer">Правильный ответ \n%s</string>
+    <string name="variants">Варианты ответов \n%s</string>
 </resources>

@@ -71,7 +71,7 @@ class PedestalFragment : Fragment(), MainActivity.IOnBackPressed {
                         if (index == 0) {
 
                             /* Idk why */
-                            /* I just felt like it */
+                            /* I've just felt like it */
                             val newStar = AppCompatImageView(requireContext())
                             newStar.setImageResource(R.drawable.star)
                             newStar.layoutParams = FrameLayout.LayoutParams(

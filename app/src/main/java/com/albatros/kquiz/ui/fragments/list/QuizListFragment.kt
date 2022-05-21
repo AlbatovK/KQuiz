@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.albatros.kquiz.R
 import com.albatros.kquiz.databinding.NameDialogBinding
 import com.albatros.kquiz.databinding.QuizListFragmentBinding
@@ -60,10 +61,7 @@ class QuizListFragment : Fragment() {
             return@Observer
         }
         binding.list.adapter = QuizAdapter(it.toMutableList(), listener)
-        binding.list.layoutManager = FlexboxLayoutManager(context).apply {
-            flexDirection = FlexDirection.ROW
-            justifyContent = JustifyContent.FLEX_START
-        }
+        binding.list.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
     }
 
     private val onRegisterResult = Observer<Long?> {
