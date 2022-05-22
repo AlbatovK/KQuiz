@@ -51,12 +51,12 @@
 ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/db_export.drawio.svg?raw=true)
 
 # Скриншоты работы приложения
- ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/enter.jpeg?raw=true)       | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/list.jpeg?raw=true)       |
+![](https://github.com/AlbatovK/KQuiz/blob/master/assets/main_screen.jpg?raw=true)       | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/full_list.jpg?raw=true)       |
 | -------------- | -------------- |
-| ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/search_1.jpeg?raw=true)   | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/search_2.jpeg?raw=true)    |
-| ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/name_host.jpeg?raw=true) | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/host.jpeg?raw=true) |
-![](https://github.com/AlbatovK/KQuiz/blob/master/assets/host_info.jpeg?raw=true) | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/name_client.jpeg?raw=true)
-![](https://github.com/AlbatovK/KQuiz/blob/master/assets/client_ex.jpeg?raw=true) | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/client.jpeg?raw=true)
-![](https://github.com/AlbatovK/KQuiz/blob/master/assets/ex_1.jpeg?raw=true) | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/ex_2.jpeg?raw=true)
-![](https://github.com/AlbatovK/KQuiz/blob/master/assets/ex_3.jpeg?raw=true) | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/res_1.jpeg?raw=true)
-![](https://github.com/AlbatovK/KQuiz/blob/master/assets/res_2.jpeg?raw=true) | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/res_3.jpeg?raw=true)
+| ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/list_filter_name.jpg?raw=true)   | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/list_filter_topic.jpg?raw=true)    |
+| ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/name_host.jpg?raw=true) | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/info_host.jpg?raw=true) |
+![](https://github.com/AlbatovK/KQuiz/blob/master/assets/client_name.jpg?raw=true) | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/host_list.jpg?raw=true)
+![](https://github.com/AlbatovK/KQuiz/blob/master/assets/ex_1.jpg?raw=true) | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/ex_2.jpg?raw=true)
+![](https://github.com/AlbatovK/KQuiz/blob/master/assets/ex_3.jpg?raw=true) | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/res_1.jpg?raw=true)
+![](https://github.com/AlbatovK/KQuiz/blob/master/assets/res_2.jpg?raw=true) | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/res_3.jpg?raw=true)
+![](https://github.com/AlbatovK/KQuiz/blob/master/assets/pedestal.jpg?raw=true) | ![](https://github.com/AlbatovK/KQuiz/blob/master/assets/creator_1.jpg?raw=true)
