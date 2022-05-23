@@ -2,7 +2,7 @@
 [![codebeat badge](https://codebeat.co/badges/532250f5-5bb9-4a9d-97ee-a658e19caddf)](https://codebeat.co/projects/github-com-albatovk-kquiz-master) [![CodeFactor](https://www.codefactor.io/repository/github/albatovk/kquiz/badge)](https://www.codefactor.io/repository/github/albatovk/kquiz)
 [![CI Build and Test](https://github.com/AlbatovK/KQuiz/actions/workflows/main.yml/badge.svg)](https://github.com/AlbatovK/KQuiz/actions/workflows/main.yml)
 # Описание проекта
-Проект представляет собой мобильное приложение, выполнящее роль платформы для создания, поиска, организации и выполнения онлайн тестов или викторин. Также в состав проекта входит [серверное приложение](https://github.com/AlbatovK/Simpriser), обеспечивающее возможность сетевой игры в режиме реальном времени с неопределённым количеством других игроков.
+Проект представляет собой мобильное приложение, выполнящее роль платформы для создания, поиска, организации и выполнения онлайн тестов или викторин. Также в состав проекта входит [серверное приложение (ссылка на проект)](https://github.com/AlbatovK/Simpriser), обеспечивающее возможность сетевой игры в режиме реальном времени с неопределённым количеством других игроков.
 ### Цели проекта
 * Модернизация учебного процесса с использованием платформы онлайн тестов
 * Упрощение интерфейса организации и прохождения учебного тестирования
@@ -14,7 +14,7 @@
 * Стэк технологий
     * Kotlin Coroutines - выполнение асинхронных операций для работы с сетью
     * Retrofit - быстрый и удобный доступ к API со стороны клиента
-    * Spring Boot Framework - web-приложение развёрнутое на [хостинге](https://floating-eyrie-81969.herokuapp.com) Heroku
+    * Spring Boot Framework - web-приложение развёрнутое на [хостинге (ссылка на сервер)](https://floating-eyrie-81969.herokuapp.com) Heroku
     * Google Firebase Filestore - серверная документоориентированная NoSql база данных
     * Android Jetpack
         * Fragment - использование нескольких экранов в рамках одной активности
