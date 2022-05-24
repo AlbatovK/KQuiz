@@ -15,6 +15,7 @@
     * Kotlin Coroutines - выполнение асинхронных операций для работы с сетью
     * Retrofit - быстрый и удобный доступ к API со стороны клиента
     * Spring Boot Framework - web-приложение развёрнутое на [хостинге (ссылка на сервер)](https://floating-eyrie-81969.herokuapp.com) Heroku
+    * Swagger2 - автоматическое создание [документации API](https://floating-eyrie-81969.herokuapp.com/swagger-ui.html)
     * Google Firebase Filestore - серверная документоориентированная NoSql база данных
     * Android Jetpack
         * Fragment - использование нескольких экранов в рамках одной активности
